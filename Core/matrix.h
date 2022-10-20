@@ -7,30 +7,40 @@
 
 
 #include <vector>
+#include "vector3.h"
 
-class matrix {
+class ModelMatrix{
 private:
-    int num_cols = 0;
-    int num_rows = 0;
+    std::vector<float> matrix;
 
-    std::vector<std::vector<float>> _matrix;
+    std::vector<std::vector<float>> stack;
+    int stack_count = 0;
+    int stack_capacity = 0;
 public:
-    matrix(std::vector<std::vector<float>> &matrix);
-    matrix(int rows, int cols);
+    ModelMatrix();
+    void load_identity();
+    std::vector<float> copy_matrix();
+    void add_transformation(std::vector<float> &matrix2);
+    void add_translation(float x, float y, float z);
+    void add_scale(float x, float y, float z);
+    void add_rotation(float x, float y, float z);
+    void push_matrix();
+    void pop_matrix();
+};
 
-    int get_num_cols() const;
-    int get_num_rows() const;
-
-    std::vector<std::vector<float>> get_rows();
-    float &operator [](int row, int col);
-    std::vector<float> &operator [](int row);
-
-    matrix operator+(const matrix &m);
-    matrix operator-(const matrix &m);
-    matrix operator*(const matrix &m);
-    float& ToArray();
-
-
+class ViewMatrix{
+private:
+    vector3 eye = vector3(0, 0, 0);
+    vector3 u = vector3(1, 0, 0);
+    vector3 v = vector3(0, 1, 0);
+    vector3 n = vector3(0, 0, 1);
+public:
+    void look(vector3 new_eye, vector3 center, vector3 up);
+    void slide(float delU, float  delV, float delN);
+    void roll(float angle);
+    void yaw(float angle);
+    void pitch(float angle);
+    std::vector<float> get_matrix();
 };
 
 
