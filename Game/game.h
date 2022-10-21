@@ -14,5 +14,6 @@ public:
     void Events();
     void Update(double delta_time);
     void Display();
+    void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 };
 #endif //PROJECT5_GAME_H
