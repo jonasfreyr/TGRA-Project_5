@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/clion,c++,macos,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=clion,c++,macos,linux
 
+.idea/*
+
 ### C++ ###
 # Prerequisites
 *.d
