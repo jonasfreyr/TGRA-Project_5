@@ -3,7 +3,7 @@ project(Project5)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(Project5 main.cpp Core/boiler.cpp Core/boiler.h Game/game.cpp Game/game.h Core/vector3.cpp Core/vector3.h Core/matrix.cpp Core/matrix.h OpenGLCore/baseObjects.cpp OpenGLCore/baseObjects.h)
+add_executable(Project5 main.cpp Core/boiler.cpp Core/boiler.h Game/game.cpp Game/game.h Core/vector3.cpp Core/vector3.h Core/matrix.cpp Core/matrix.h OpenGLCore/baseObjects.cpp OpenGLCore/baseObjects.h OpenGLCore/Shader3D.cpp OpenGLCore/Shader3D.h)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
