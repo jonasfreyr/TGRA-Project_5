@@ -23,12 +23,11 @@ private:
     GLint shininessLoc;
     GLint matAmbientLoc;
     GLint lightAmountLoc;
-
-
-
-    Shader3D();
 public:
+    Shader3D();
+
     void use();
+
     void set_model_matrix(std::vector<float> matrix_array);
     void set_projection_matrix(std::vector<float>  matrix_array);
     void set_view_matrix(std::vector<float>  matrix_array);

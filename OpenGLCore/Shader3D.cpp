@@ -3,8 +3,14 @@
 //
 
 #include <sstream>
-#include <GL/glew.h>
 #include "Shader3D.h"
+
+#if __APPLE__
+    #include <OpenGL/glu.h>
+#else
+    #include <GL/glew.h>
+#endif
+
 #include "fstream"
 
 Shader3D::Shader3D() {
@@ -12,7 +18,7 @@ Shader3D::Shader3D() {
     auto vert_shader = glCreateShader(GL_VERTEX_SHADER);
     auto shader_file = std::ifstream("./Shaders/simple3D.vert");;
     std::string str;
-    if (shader_file){
+    if (shader_file) {
         std::ostringstream ss;
         ss << shader_file.rdbuf(); // reading data
         str = ss.str();
@@ -83,7 +89,7 @@ Shader3D::Shader3D() {
     matAmbientLoc = glGetUniformLocation(renderingProgramID, "u_material_ambient");
 
     lightAmountLoc = glGetUniformLocation(renderingProgramID, "light_amount");
-    
+
 
 }
 
