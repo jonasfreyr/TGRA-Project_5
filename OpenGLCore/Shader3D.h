@@ -6,16 +6,18 @@
 #define PROJECT5_SHADER3D_H
 
 
+#include <vector>
+
 class Shader3D {
 private:
     Shader3D();
 public:
     void use();
-    void set_model_matrix(float matrix_array[]);
-    void set_projection_matrix(float matrix_array[]);
-    void set_view_matrix(float matrix_array[]);
-    void set_position_attribute(float vertex_array[]);
-    void set_normal_attribute(float vertex_array[]);
+    void set_model_matrix(std::vector<float> matrix_array);
+    void set_projection_matrix(std::vector<float>  matrix_array);
+    void set_view_matrix(std::vector<float>  matrix_array);
+    void set_position_attribute(std::vector<float>  vertex_array);
+    void set_normal_attribute(std::vector<float>  vertex_array);
 
     void set_light_position(float x, float y, float z, int i);
     void set_material_diffuse(float r, float g, float b);
