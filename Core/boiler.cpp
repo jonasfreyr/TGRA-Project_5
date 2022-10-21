@@ -6,7 +6,6 @@
 //
 
 #include "boiler.h"
-#include "GLFW/glfw3.h"
 
 Clock::Clock()
 {

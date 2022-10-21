@@ -1,12 +1,12 @@
 //
 // Created by jonas on 19.10.2022.
 //
-#include "GLFW/glfw3.h"
-#include "../OpenGLCore/Shader3D.h"
-#include "../Core/matrix.h"
-#include "../OpenGLCore/baseObjects.h"
 
 #ifndef PROJECT5_GAME_H
+#include "../OpenGLCore/Shader3D.h"
+#include "../Core/matrix.h"
+#include "../Core/boiler.h"
+#include "../OpenGLCore/baseObjects.h"
 #define PROJECT5_GAME_H
 
 class Game {

@@ -7,7 +7,6 @@
 
 #include "vector"
 #include "cmath"
-#include "GLFW/glfw3.h"
 #include "Shader3D.h"
 #include "../Core/matrix.h"
 
@@ -23,8 +22,6 @@ public:
     Sphere();
 
     void draw(Shader3D shader);
-
-    void init_openGL(Shader3D shader, ModelMatrix model);
 };
 
 class Cube {

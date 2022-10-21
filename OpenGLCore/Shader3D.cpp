@@ -4,12 +4,7 @@
 
 #include <sstream>
 #include "Shader3D.h"
-
-#if __APPLE__
-    #include <OpenGL/glu.h>
-#else
-    #include <GL/glew.h>
-#endif
+#include "../Core/boiler.h"
 
 #include "fstream"
 

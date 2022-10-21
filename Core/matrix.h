@@ -3,11 +3,10 @@
 //
 
 #ifndef PROJECT5_MATRIX_H
-#define PROJECT5_MATRIX_H
-
-
 #include <vector>
 #include "vector3.h"
+#define PROJECT5_MATRIX_H
+
 
 class ModelMatrix {
 private:

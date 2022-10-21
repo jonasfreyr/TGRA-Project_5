@@ -17,7 +17,7 @@ void Sphere::init(int stacks_inp, int slices_inp) {
     vertex_array = {};
 
     float stack_interval = M_PI / stacks;
-    float slice_interval = 2.0 * M_PI / slices;
+    float slice_interval = 2.0f * M_PI / slices;
 
     float stack_angle;
     float slice_angle;
@@ -51,10 +51,6 @@ void Sphere::draw(Shader3D shader) {
 
 
 Cube::Cube() {
-
-}
-
-void Cube::init() {
     position_array = {
             -0.5, -0.5, -0.5,
             -0.5, 0.5, -0.5,

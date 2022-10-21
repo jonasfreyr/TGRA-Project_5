@@ -10,12 +10,15 @@ set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
 add_subdirectory(glfw-3.3.8)
-
 target_link_libraries(Project5 glfw)
+
 if (NOT APPLE)
     target_link_libraries(Project5 -lGLU)
 endif ()
 
 find_package(OpenGL REQUIRED)
 
+target_link_libraries(Project5 ${OPENGL_LIBRARIES})
 target_link_libraries(Project5 OpenGL::GL)
+target_link_libraries(Project5 OpenGL::GLU)
+

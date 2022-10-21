@@ -8,15 +8,6 @@
 #include <cstdlib>
 #include <unistd.h>
 #include <map>
-
-#if __APPLE__
-
-#include <OpenGL/glu.h>
-
-#else
-#include <GL/glu.h>
-#endif
-
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 600
 
@@ -32,8 +23,8 @@ std::map<int, bool> key_pushed = {
 Game::Game() {
     running = true;
     window = nullptr;
-    shader = Shader3D();
-    shader.use();
+    // shader = Shader3D();
+    // shader.use();
 
     model_matrix = ModelMatrix();
 
@@ -42,7 +33,7 @@ Game::Game() {
 
     shader.set_view_matrix(view_matrix.get_matrix());
     shader.set_projection_matrix(projection_matrix.get_matrix());
-    projection_matrix.set_perspective(90, 16 / 9, 1, 100);
+    projection_matrix.set_perspective(90, 16.0f / 9.0f, 1, 100);
 
     model_matrix = ModelMatrix();
 

@@ -7,7 +7,7 @@
 
 
 #include <vector>
-#include <GL/glew.h>
+#include "../Core/boiler.h"
 
 class Shader3D {
 private:
