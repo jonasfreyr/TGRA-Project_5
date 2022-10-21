@@ -29,7 +29,7 @@ public:
 
     Cube();
 
-    void draw(Shader3D shader);
+    void draw(Shader3D *shader);
 
 };
 

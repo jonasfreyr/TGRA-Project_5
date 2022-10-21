@@ -13,7 +13,7 @@ class Game {
 public:
     bool running;
     GLFWwindow *window;
-    Shader3D shader;
+    Shader3D *shader;
 
     ViewMatrix view_matrix;
     ProjectionMatrix projection_matrix;

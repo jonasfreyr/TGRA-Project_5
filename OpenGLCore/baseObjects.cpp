@@ -101,10 +101,10 @@ Cube::Cube() {
     };
 }
 
-void Cube::draw(Shader3D shader) {
+void Cube::draw(Shader3D *shader) {
 
-    shader.set_position_attribute(position_array);
-    shader.set_normal_attribute(normal_array);
+    shader->set_position_attribute(position_array);
+    shader->set_normal_attribute(normal_array);
 
     glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
     glDrawArrays(GL_TRIANGLE_FAN, 4, 4);
