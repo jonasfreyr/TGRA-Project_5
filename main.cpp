@@ -8,7 +8,7 @@ int main() {
     Game g = Game();
     Clock c = Clock();
 
-    if (g.init()) return -1;
+    if (!g.init()) return -1;
     while (g.running){
         g.Events();
         g.Update(c.Tick());
