@@ -17,9 +17,7 @@ public:
     int vertex_count;
     std::vector<float> vertex_array;
 
-    void init(int stacks_inp, int slices_inp);
-
-    Sphere();
+    Sphere(int stacks_inp, int slices_inp);
 
     void draw(Shader3D shader);
 };
@@ -28,8 +26,6 @@ class Cube {
 public:
     std::vector<float> position_array;
     std::vector<float> normal_array;
-
-    void init();
 
     Cube();
 
