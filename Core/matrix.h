@@ -11,12 +11,13 @@
 
 class ModelMatrix {
 private:
+public:
     std::vector<float> matrix;
 
     std::vector<std::vector<float>> stack;
     int stack_count = 0;
     int stack_capacity = 0;
-public:
+
     ModelMatrix();
 
     void load_identity();

@@ -25,6 +25,7 @@ std::map<int, bool> key_pushed = {
         {GLFW_KEY_DOWN,  false},
         {GLFW_KEY_RIGHT, false},
         {GLFW_KEY_LEFT,  false},
+        {GLFW_KEY_SPACE, false},
 };
 
 
