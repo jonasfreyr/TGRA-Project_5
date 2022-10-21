@@ -4,7 +4,6 @@
 
 #include "baseObjects.h"
 #include "vector"
-#include "../glfw-3.3.8/src/cocoa_platform.h"
 
 
 Sphere::Sphere() {
@@ -36,6 +35,16 @@ void Sphere::init(int stacks_inp, int slices_inp) {
             vertex_count += 2;
         }
 
+    }
+
+}
+
+void Sphere::draw(Shader3D shader) {
+    shader.set_position_attribute(vertex_array);
+    shader.set_normal_attribute(vertex_array);
+
+    for (int i = vertex_count; i < (slices + 1) * 2; i++) {
+        glDrawArrays(GL_TRIANGLE_STRIP, i, (slices + 1) * 2);
     }
 
 }
@@ -101,11 +110,9 @@ void Cube::init() {
 }
 
 void Cube::draw(Shader3D shader) {
-    float *pos_array = &position_array[0];
-    float *norm_array = &normal_array[0];
 
-    shader.set_position_attribute(pos_array);
-    shader.set_normal_attribute(norm_array);
+    shader.set_position_attribute(position_array);
+    shader.set_normal_attribute(normal_array);
 
     glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
     glDrawArrays(GL_TRIANGLE_FAN, 4, 4);
