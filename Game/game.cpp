@@ -42,7 +42,7 @@ int Game::init() {
 
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-    window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Title", NULL, NULL);
+    window = glfwCreateWindow(100, 200, "Title", NULL, NULL);
     if (!window) {
         glfwTerminate();
 

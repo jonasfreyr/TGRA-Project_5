@@ -1,4 +1,7 @@
+#include <iostream>
 #include "Core/boiler.h"
+#include "Core/matrix.h"
+#include "Core/vector3.h"
 #include "Game/game.h"
 
 int main() {

@@ -4,6 +4,7 @@
 
 #include "matrix.h"
 #include <cmath>
+#include <iostream>
 
 ModelMatrix::ModelMatrix() {
     int counter = 0;
@@ -179,4 +180,41 @@ std::vector<float> ViewMatrix::get_matrix() {
         n.x, n.y, n.z, minusEye * n,
         0,   0,   0,   1
     };
+}
+
+void ProjectionMatrix::set_perspective(float fovy, float aspect, float N, float F) {
+    static const float halfC = M_PI / 180;
+    fovy = fovy * halfC;
+
+    std::cout << aspect << std::endl;
+
+    top = N * tanf(fovy / 2);
+    bottom = -top;
+    right = top * aspect;
+    left = -right;
+    near = N;
+    far = F;
+
+    std::cout << top << std::endl;
+    std::cout << bottom << std::endl;
+    std::cout << right << std::endl;
+    std::cout << left << std::endl;
+    std::cout << near << std::endl;
+    std::cout << far << std::endl;
+    std::cout << "-----" << std::endl;
+}
+
+std::vector<float> ProjectionMatrix::get_matrix() {
+    float _0_0 = (2 * near) / (right - left);
+    float  _0_2 = (right + left) / (right - left);
+    float _1_1 = (2 * near) / (top - bottom);
+    float _1_2 = (top + bottom) / (top - bottom);
+    float _2_2 = -(far + near) / (far - near);
+    float _2_3 = (-2 * far * near) / (far - near);
+
+    return std::vector<float> {
+            _0_0, 0,    _0_2, 0,
+            0,    _1_1, _1_2, 0,
+            0,    0,    _2_2, _2_3,
+            0,    0,    -1,   0};
 }

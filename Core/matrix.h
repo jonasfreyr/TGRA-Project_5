@@ -43,5 +43,17 @@ public:
     std::vector<float> get_matrix();
 };
 
+class ProjectionMatrix{
+private:
+    float left = -1;
+    float right = 1;
+    float bottom = -1;
+    float top = 1;
+    float near = -1;
+    float far = 1;
+public:
+    void set_perspective(float fovy, float aspect, float N, float F);
+    std::vector<float> get_matrix();
+};
 
 #endif //PROJECT5_MATRIX_H
