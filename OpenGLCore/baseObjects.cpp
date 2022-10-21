@@ -6,11 +6,7 @@
 #include "vector"
 
 
-Sphere::Sphere() {
-
-}
-
-void Sphere::init(int stacks_inp, int slices_inp) {
+Sphere::Sphere(int stacks_inp, int slices_inp) {
     stacks = stacks_inp;
     slices = slices_inp;
     vertex_count = 0;
@@ -36,8 +32,8 @@ void Sphere::init(int stacks_inp, int slices_inp) {
         }
 
     }
-
 }
+
 
 void Sphere::draw(Shader3D shader) {
     shader.set_position_attribute(vertex_array);
@@ -51,10 +47,6 @@ void Sphere::draw(Shader3D shader) {
 
 
 Cube::Cube() {
-
-}
-
-void Cube::init() {
     position_array = {
             -0.5, -0.5, -0.5,
             -0.5, 0.5, -0.5,
