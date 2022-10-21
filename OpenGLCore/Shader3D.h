@@ -7,9 +7,25 @@
 
 
 #include <vector>
+#include <GL/glew.h>
 
 class Shader3D {
 private:
+    GLint renderingProgramID;
+    GLint positionLoc;
+    GLint normalLoc;
+    GLint modelMatrixLoc;
+    GLint projectionMatrixLoc;
+    GLint viewMatrixLoc;
+    GLint matDifLoc;
+    GLint cameraPosLoc;
+    GLint matSpecLoc;
+    GLint shininessLoc;
+    GLint matAmbientLoc;
+    GLint lightAmountLoc;
+
+
+
     Shader3D();
 public:
     void use();
@@ -28,7 +44,7 @@ public:
     void set_material_specular(float r, float g, float b);
     void set_material_shininess(float s);
     void set_light_ambient(float r, float g, float b, int i);
-    void set_material_ambien(float r, float g, float b);
+    void set_material_ambient(float r, float g, float b);
     void set_light_amount(int amount);
 };
 
