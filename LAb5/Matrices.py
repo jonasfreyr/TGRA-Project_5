@@ -198,12 +198,22 @@ class ProjectionMatrix:
     def set_perspective(self, fovy, aspect, N, F):
         fovy = radians(fovy)
 
+        print(aspect)
+
         self.top = N * tan(fovy / 2)
         self.bottom = -self.top
         self.right = self.top * aspect
         self.left = -self.right
         self.near = N
         self.far = F
+
+        print(self.top)
+        print(self.bottom)
+        print(self.right)
+        print(self.left)
+        print(self.near)
+        print(self.far)
+        print("--")
 
     def get_matrix(self):
         if self.is_orthographic:
